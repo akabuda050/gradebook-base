@@ -29,7 +29,7 @@ export function createSkillConfigGroup(name: string, configs: SkillConfig[]): Sk
 }
 
 export function createSkillMastery(name: string, skill: Skill, mastery: Mastery): SkillMastery {
-    return { name: `${name}: ${skill.name} - ${mastery.name}`, skill, mastery };
+    return { name, skill, mastery };
 }
 
 export function createSkillMasteryGroup(name: string, skillMasteries: SkillMastery[]): SkillMasteryGroup {
