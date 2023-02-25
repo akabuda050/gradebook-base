@@ -1,4 +1,4 @@
-import { Assessment } from "./Assessment";
+import { Assessment } from ".";
 
 export interface Candidate {
     name: string;

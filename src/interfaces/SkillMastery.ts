@@ -1,5 +1,4 @@
-import { Mastery } from "./Mastery";
-import { Skill } from "./Skill";
+import { Skill, Mastery } from ".";
 
 export interface SkillMastery {
     name: string;

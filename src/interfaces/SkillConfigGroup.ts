@@ -1,4 +1,4 @@
-import { SkillConfig } from "./SkillConfig";
+import { SkillConfig } from ".";
 
 export interface SkillConfigGroup {
     name: string;

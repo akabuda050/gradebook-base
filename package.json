@@ -1,0 +1,39 @@
+{
+  "name": "gradebook-base",
+  "version": "1.0.0",
+  "description": "Defines simple interfaces for gradebook projects.",
+  "main": "dist/index.js",
+  "types": "dist/types/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akabuda050/gradebook-base.git"
+  },
+  "keywords": [
+    "gradebook",
+    "skill-matrix",
+    "assessment"
+  ],
+  "author": "Olexandr Dolbin <olexandr.dolbin@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/akabuda050/gradebook-base/issues"
+  },
+  "homepage": "https://github.com/akabuda050/gradebook-base#readme",
+  "peerDependencies": {
+    "react": "^16.0.0",
+    "vue": "^3.0.0"
+  },
+  "devDependencies": {
+    "rollup": "^3.17.2",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.34.1",
+    "typescript": "^4.9.5"
+  }
+}

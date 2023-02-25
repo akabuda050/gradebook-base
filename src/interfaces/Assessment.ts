@@ -1,5 +1,4 @@
-import { SkillConfigGroup } from "./SkillConfigGroup";
-import { SkillMasteryGroup } from "./SkillMasteryGroup";
+import { SkillConfigGroup, SkillMasteryGroup } from ".";
 
 export interface Assessment {
     name: string;

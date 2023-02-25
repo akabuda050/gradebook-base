@@ -1,8 +1,8 @@
-import { GradeConfig } from "./GradeConfig";
-import { Skill } from "./Skill";
+import { Skill, Priority, GradeMastery } from ".";
 
 export interface SkillConfig {
     name: string;
     skill: Skill;
-    gradesConfig: GradeConfig[];
+    priority: Priority;
+    gradesMasteries: GradeMastery[];
 }

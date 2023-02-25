@@ -1,14 +1,4 @@
-import { Skill } from "./interfaces/Skill";
-import { Priority } from "./interfaces/Priority";
-import { Mastery } from "./interfaces/Mastery";
-import { Grade } from "./interfaces/Grade";
-import { GradeConfig } from "./interfaces/GradeConfig";
-import { SkillConfig } from "./interfaces/SkillConfig";
-import { SkillConfigGroup } from "./interfaces/SkillConfigGroup";
-import { SkillMastery } from "./interfaces/SkillMastery";
-import { SkillMasteryGroup } from "./interfaces/SkillMasteryGroup";
-import { Assessment } from "./interfaces/Assessment";
-import { Candidate } from "./interfaces/Candidate";
+import { Skill, Priority, Mastery, Grade, GradeMastery, SkillConfig, SkillMastery, SkillMasteryGroup, SkillConfigGroup, Assessment, Candidate } from './interfaces';
 
 export function createSkill(name: string, description: string, comment?: string): Skill {
     return { name, description, comment };
@@ -26,12 +16,12 @@ export function createGrade(name: string): Grade {
     return { name };
 }
 
-export function createGradeConfig(grade: Grade, priority: Priority, mastery: Mastery): GradeConfig {
-    return { name: `${grade.name}: ${priority.name} - ${mastery.name}`, grade, priority, mastery };
+export function createGradeMastery(name: string, grade: Grade, mastery: Mastery): GradeMastery {
+    return { name, grade, mastery };
 }
 
-export function createSkillConfig(name: string, skill: Skill, gradesConfig: GradeConfig[]): SkillConfig {
-    return { name, skill, gradesConfig };
+export function createSkillConfig(name: string, skill: Skill, priority: Priority, gradesMasteries: GradeMastery[]): SkillConfig {
+    return { name, skill, priority, gradesMasteries };
 }
 
 export function createSkillConfigGroup(name: string, configs: SkillConfig[]): SkillConfigGroup {
@@ -59,7 +49,7 @@ export default {
     createPriority,
     createMastery,
     createGrade,
-    createGradeConfig,
+    createGradeMastery,
     createSkillConfig,
     createSkillConfigGroup,
     createSkillMastery,

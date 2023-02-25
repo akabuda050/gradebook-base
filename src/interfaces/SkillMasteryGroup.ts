@@ -1,4 +1,4 @@
-import { SkillMastery } from "./SkillMastery";
+import { SkillMastery } from ".";
 
 export interface SkillMasteryGroup {
     name: string;
