@@ -14,6 +14,10 @@ export default {
       format: 'esm',
       sourcemap: true,
       plugins: [terser()]
+    },
+    {
+      file: 'dist/types/index.d.ts',
+      format: 'es'
     }
   ],
   plugins: [
