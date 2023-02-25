@@ -2,10 +2,6 @@
     "extends": "./tsconfig.json",
     "exclude": ["src/**/__tests__/*"],
     "compilerOptions": {
-      "declaration": false,
-      "declarationMap": false,
-      "inlineSourceMap": true,
-      "inlineSources": true,
       "outDir": "./dist"
     }
   }

@@ -1,4 +1,4 @@
-import { Skill, Priority, Mastery, Grade, GradeMastery, SkillConfig, SkillMastery, SkillMasteryGroup, SkillConfigGroup, Assessment, Candidate } from './interfaces';
+import { Skill, Priority, Mastery, Grade, GradeMastery, SkillConfig, SkillMastery, SkillMasteryGroup, SkillConfigGroup, Assessment, Candidate } from '../interfaces';
 
 export function createSkill(name: string, description: string, comment?: string): Skill {
     return { name, description, comment };
