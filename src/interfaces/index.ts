@@ -1,25 +1,30 @@
-import { Skill } from "./Skill";
-import { Priority } from "./Priority";
-import { Mastery } from "./Mastery";
-import { Grade } from "./Grade";
-import { GradeMastery } from "./GradeMastery";
-import { SkillConfig } from "./SkillConfig";
-import { SkillConfigGroup } from "./SkillConfigGroup";
-import { SkillMastery } from "./SkillMastery";
-import { SkillMasteryGroup } from "./SkillMasteryGroup";
-import { Assessment } from "./Assessment";
-import { Candidate } from "./Candidate";
+import { ISkill } from "./ISkill";
+import { IPriority } from "./IPriority";
+import { IMastery } from "./IMastery";
+import { IGrade } from "./IGrade";
+import { IGradeMastery } from "./IGradeMastery";
+import { IGradeMasteryTotal } from "./IGradeMasteryTotal";
+
+import { ISkillConfig } from "./ISkillConfig";
+import { ISkillConfigGroup } from "./ISkillConfigGroup";
+import { ISkillConfigGroupScore } from "./ISkillConfigGroupScore";
+import { ISkillMastery } from "./ISkillMastery";
+import { ISkillMasteryGroup } from "./ISkillMasteryGroup";
+import { IAssessment } from "./IAssessment";
+import { ICandidate } from "./ICandidate";
 
 export {
-    Skill,
-    Priority,
-    Mastery,
-    Grade,
-    GradeMastery,
-    SkillConfig,
-    SkillConfigGroup,
-    SkillMastery,
-    SkillMasteryGroup,
-    Assessment,
-    Candidate,
+    ISkill,
+    IPriority,
+    IMastery,
+    IGrade,
+    IGradeMastery,
+    IGradeMasteryTotal,
+    ISkillConfig,
+    ISkillConfigGroup,
+    ISkillConfigGroupScore,
+    ISkillMastery,
+    ISkillMasteryGroup,
+    IAssessment,
+    ICandidate,
 }

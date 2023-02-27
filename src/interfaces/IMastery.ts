@@ -1,4 +1,4 @@
-export interface Mastery {
+export interface IMastery {
   name: string;
   level: number;
 }

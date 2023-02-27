@@ -1,4 +1,4 @@
-export interface Priority {
+export interface IPriority {
     name: string;
     weight: number;
 }
