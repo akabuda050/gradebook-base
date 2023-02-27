@@ -1,5 +1,5 @@
-import { IGradeMasteryTotal } from ".";
+import { IGradeMasteryScore } from ".";
 
 export interface ISkillConfigGroupScore {
-    gradeMasteryTotal: IGradeMasteryTotal[]
+    gradeMasteryScore: IGradeMasteryScore[]
 }

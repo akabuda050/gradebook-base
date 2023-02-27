@@ -3,8 +3,7 @@ import { IPriority } from "./IPriority";
 import { IMastery } from "./IMastery";
 import { IGrade } from "./IGrade";
 import { IGradeMastery } from "./IGradeMastery";
-import { IGradeMasteryTotal } from "./IGradeMasteryTotal";
-
+import { IGradeMasteryScore } from "./IGradeMasteryScore";
 import { ISkillConfig } from "./ISkillConfig";
 import { ISkillConfigGroup } from "./ISkillConfigGroup";
 import { ISkillConfigGroupScore } from "./ISkillConfigGroupScore";
@@ -12,6 +11,7 @@ import { ISkillMastery } from "./ISkillMastery";
 import { ISkillMasteryGroup } from "./ISkillMasteryGroup";
 import { IAssessment } from "./IAssessment";
 import { ICandidate } from "./ICandidate";
+import { ICandidateAssessmentResult } from './ICandidateAssessmentResult';
 
 export {
     ISkill,
@@ -19,7 +19,7 @@ export {
     IMastery,
     IGrade,
     IGradeMastery,
-    IGradeMasteryTotal,
+    IGradeMasteryScore,
     ISkillConfig,
     ISkillConfigGroup,
     ISkillConfigGroupScore,
@@ -27,4 +27,5 @@ export {
     ISkillMasteryGroup,
     IAssessment,
     ICandidate,
+    ICandidateAssessmentResult,
 }

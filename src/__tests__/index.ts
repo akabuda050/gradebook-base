@@ -59,19 +59,7 @@ const candidate = utils.createCandidate('John Doe', [
     )
 ]);
 
-
-const gradesScore = candidate.assessment[0].skillConfigGroup &&
-    utils.calculateSkillConfigGroupGradeTotals(candidate.assessment[0].skillConfigGroup) || {
-    gradeMasteryTotal: [],
-};
-
-const totalMastery = candidate.assessment[0].skillMasteryGroup
-    && candidate.assessment[0].skillConfigGroup
-    && utils.calculateSkillSkillMasteryTotals(
-        candidate.assessment[0].skillMasteryGroup,
-        candidate.assessment[0].skillConfigGroup
-    ) || 0;
-
-console.log(candidate);
-console.log(gradesScore);
-console.log(gradesScore.gradeMasteryTotal.find((grade) => grade.total <= totalMastery))
+console.log({
+    candidate,
+    results: utils.calculateCandidateAssesmentResults(candidate),
+});
