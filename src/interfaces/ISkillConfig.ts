@@ -1,8 +1,8 @@
-import { ISkill, IPriority, IGradeMastery } from ".";
+import { ISkill, IWeight, IGradeMastery } from ".";
 
 export interface ISkillConfig {
     name: string;
     skill: ISkill;
-    priority: IPriority;
+    weight: IWeight;
     gradeMastery: IGradeMastery[];
 }

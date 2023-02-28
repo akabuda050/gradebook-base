@@ -1,5 +1,5 @@
 import { ISkill } from "./ISkill";
-import { IPriority } from "./IPriority";
+import { IWeight } from "./IWeight";
 import { IMastery } from "./IMastery";
 import { IGrade } from "./IGrade";
 import { IGradeMastery } from "./IGradeMastery";
@@ -15,7 +15,7 @@ import { ICandidateAssessmentResult } from './ICandidateAssessmentResult';
 
 export {
     ISkill,
-    IPriority,
+    IWeight,
     IMastery,
     IGrade,
     IGradeMastery,

@@ -1,11 +1,11 @@
-import { ISkill, IPriority, IMastery, IGrade, IGradeMastery, ISkillConfig, ISkillMastery, ISkillMasteryGroup, ISkillConfigGroup, IAssessment, ICandidate, ISkillConfigGroupScore, IGradeMasteryScore, ICandidateAssessmentResult } from '../interfaces';
+import { ISkill, IWeight, IMastery, IGrade, IGradeMastery, ISkillConfig, ISkillMastery, ISkillMasteryGroup, ISkillConfigGroup, IAssessment, ICandidate, ISkillConfigGroupScore, IGradeMasteryScore, ICandidateAssessmentResult } from '../interfaces';
 
 export function createSkill(name: string, description: string, comment?: string): ISkill {
     return { name, description, comment };
 }
 
-export function createPriority(name: string, weight: number): IPriority {
-    return { name, weight };
+export function createWeight(name: string, value: number): IWeight {
+    return { name, value };
 }
 
 export function createMastery(name: string, level: number): IMastery {
@@ -20,8 +20,8 @@ export function createGradeMastery(name: string, grade: IGrade, mastery: IMaster
     return { name, grade, mastery };
 }
 
-export function createSkillConfig(name: string, skill: ISkill, priority: IPriority, gradeMastery: IGradeMastery[] = []): ISkillConfig {
-    return { name, skill, priority, gradeMastery };
+export function createSkillConfig(name: string, skill: ISkill, weight: IWeight, gradeMastery: IGradeMastery[] = []): ISkillConfig {
+    return { name, skill, weight, gradeMastery };
 }
 
 export function createSkillConfigGroup(name: string, skillConfig: ISkillConfig[] = []): ISkillConfigGroup {
@@ -37,10 +37,6 @@ export function createSkillMasteryGroup(name: string, skillMastery: ISkillMaster
 }
 
 export function createAssessment(name: string, skillConfigGroup?: ISkillConfigGroup, skillMasteryGroup?: ISkillMasteryGroup): IAssessment {
-    if (!skillConfigGroup || !skillMasteryGroup) {
-        return !skillConfigGroup ? { name, skillMasteryGroup } : { name, skillMasteryGroup };
-    }
-
     return { name, skillConfigGroup, skillMasteryGroup };
 }
 
@@ -64,7 +60,7 @@ export function calculateGradeMasteryScore(group: ISkillConfigGroup): ISkillConf
 
                 totals.gradeMasteryScore.push(gradeMasteryTotal);
             } else {
-                totals.gradeMasteryScore[scoreInedx]['score'] += m.mastery.level;
+                totals.gradeMasteryScore[scoreInedx]['score'] += m.mastery.level * config.weight.value;
             }
         });
 
@@ -75,16 +71,26 @@ export function calculateGradeMasteryScore(group: ISkillConfigGroup): ISkillConf
 
 export function calculateSkillMasteryScore(skillMasteryGroup: ISkillMasteryGroup, skillConfigGroup: ISkillConfigGroup): number {
     return skillMasteryGroup.skillMastery.reduce((acc, mastery) => {
-        const priority = skillConfigGroup.skillConfig.find((config) =>
-            config.skill.name === mastery.skill.name)?.priority.weight || 0;
+        const weight = skillConfigGroup.skillConfig.find((config) =>
+            config.skill.name === mastery.skill.name)?.weight.value || 0;
 
-        acc += priority * mastery.mastery.level;
+        acc += weight * mastery.mastery.level;
         return acc;
     }, 0);
 }
 
 export function calculateGrade(skillConfigGroupScore: ISkillConfigGroupScore, score: number): IGrade['name'] | undefined {
-    return skillConfigGroupScore.gradeMasteryScore.find((grade) => grade.score >= score)?.name;
+    let closestMinValue = null;
+  
+    for (let i = 0; i < skillConfigGroupScore.gradeMasteryScore.length; i++) {
+        let currentValue = skillConfigGroupScore.gradeMasteryScore[i];
+        
+        if (currentValue.score <= score && (closestMinValue === null || score - currentValue.score <= score - closestMinValue.score)) {
+            closestMinValue = currentValue;
+        }
+    }
+  
+  return closestMinValue?.name;
 }
 
 export function calculateAssesmentResult(assessment: IAssessment): ICandidateAssessmentResult {
@@ -120,7 +126,7 @@ export function calculateCandidateAssesmentResults(candidate: ICandidate): ICand
 
 export default {
     createSkill,
-    createPriority,
+    createWeight,
     createMastery,
     createGrade,
     createGradeMastery,
