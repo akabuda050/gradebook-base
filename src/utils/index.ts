@@ -84,7 +84,7 @@ export function calculateSkillMasteryScore(skillMasteryGroup: ISkillMasteryGroup
 }
 
 export function calculateGrade(skillConfigGroupScore: ISkillConfigGroupScore, score: number): IGrade['name'] | undefined {
-    return skillConfigGroupScore.gradeMasteryScore.find((grade) => grade.score <= score)?.name;
+    return skillConfigGroupScore.gradeMasteryScore.find((grade) => grade.score >= score)?.name;
 }
 
 export function calculateAssesmentResult(assessment: IAssessment): ICandidateAssessmentResult {
