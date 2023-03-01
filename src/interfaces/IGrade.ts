@@ -1,3 +1,3 @@
 export interface IGrade {
-    name: string;
+  name: string;
 }

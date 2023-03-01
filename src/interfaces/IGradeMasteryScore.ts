@@ -1,6 +1,6 @@
-import { IGrade } from ".";
+import { IGrade } from '.';
 
 export interface IGradeMasteryScore {
-    name: IGrade['name'];
-    score: number;
+  grade: IGrade;
+  score: number;
 }

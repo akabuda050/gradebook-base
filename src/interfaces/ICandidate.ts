@@ -1,6 +1,6 @@
-import { IAssessment } from ".";
+import { IAssessment } from '.';
 
 export interface ICandidate {
-    name: string;
-    assessment: IAssessment[];
+  name: string;
+  assessment: IAssessment[];
 }

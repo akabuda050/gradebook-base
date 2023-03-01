@@ -1,7 +1,8 @@
-import { ISkillConfigGroup, ISkillMasteryGroup } from ".";
+import { IGrade, IGradeMasteryScore, ISkillConfig, ISkillMastery } from '.';
 
 export interface IAssessment {
-    name: string;
-    skillConfigGroup?: ISkillConfigGroup;
-    skillMasteryGroup?: ISkillMasteryGroup;
+  name: string;
+  grade: IGrade[];
+  skillConfig: ISkillConfig[];
+  skillMastery: ISkillMastery[];
 }

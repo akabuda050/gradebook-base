@@ -1,7 +1,7 @@
-import { ISkill, IMastery } from ".";
+import { ISkill, IMastery } from '.';
 
 export interface ISkillMastery {
-    name: string;
-    skill: ISkill;
-    mastery: IMastery;
+  name: string;
+  skill: ISkill;
+  mastery: IMastery;
 }
