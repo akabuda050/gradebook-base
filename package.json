@@ -1,6 +1,6 @@
 {
   "name": "gradebook-base",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "Defines simple interfaces for gradebook projects.",
   "main": "dist/index.js",
   "type": "module",
