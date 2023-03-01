@@ -109,7 +109,7 @@ const skillMastery2 = GradeBook.createSkillMastery(skill2, mastery2);
 const skillMastery3 = GradeBook.createSkillMastery(skill3, mastery3);
 const skillMastery4 = GradeBook.createSkillMastery(skill3, mastery3);
 
-assessment.skillMastery = [
+candidate.assesment[0].skillMastery = [
   skillMastery1,
   skillMastery2,
   skillMastery3,

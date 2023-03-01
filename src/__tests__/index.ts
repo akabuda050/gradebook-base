@@ -88,7 +88,7 @@ const skillMastery2 = utils.createSkillMastery(skill2, mastery2);
 const skillMastery3 = utils.createSkillMastery(skill3, mastery3);
 const skillMastery4 = utils.createSkillMastery(skill3, mastery3);
 
-assessment.skillMastery = [
+candidate.assessment[0].skillMastery = [
   skillMastery1,
   skillMastery2,
   skillMastery3,
@@ -98,5 +98,5 @@ assessment.skillMastery = [
 // Calculate result and get grade.
 console.log({
   candidate,
-  results: utils.calculateCandidateAssesmentResults(candidate),
+  candidateResult: utils.calculateCandidateAssesmentResults(candidate),
 });
