@@ -28,8 +28,8 @@ export function createMastery(name: string, level: number): IMastery {
   return { name, level };
 }
 
-export function createGrade(name: string): IGrade {
-  return { name };
+export function createGrade(name: string, order: number): IGrade {
+  return { name, order };
 }
 
 export function createGradeMastery(
@@ -49,11 +49,10 @@ export function createSkillConfig(
 }
 
 export function createSkillMastery(
-  name: string,
   skill: ISkill,
   mastery: IMastery
 ): ISkillMastery {
-  return { name, skill, mastery };
+  return { skill, mastery };
 }
 
 export function createAssessment(
@@ -150,7 +149,7 @@ export function calculateAssesmentResult(
 ): IAssessmentResult {
   const result: IAssessmentResult = createAssesmentResult(
     assessment,
-    { name: 'N/A' },
+    { name: 'N/A', order: 0 },
     0
   );
 
