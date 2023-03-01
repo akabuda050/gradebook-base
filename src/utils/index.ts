@@ -59,10 +59,12 @@ export function createSkillMastery(
 export function createAssessment(
   name: string,
   grade: IGrade[] = [],
+  weight: IWeight[] = [],
+  mastery: IMastery[] = [],
   skillConfig: ISkillConfig[] = [],
   skillMastery: ISkillMastery[] = []
 ): IAssessment {
-  return { name, grade, skillConfig, skillMastery };
+  return { name, grade, weight, mastery, skillConfig, skillMastery };
 }
 
 export function createCandidate(

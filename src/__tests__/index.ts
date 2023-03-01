@@ -71,22 +71,22 @@ const skillConfig4 = utils.createSkillConfig(
   ]
 );
 
-const skillMaster1 = utils.createSkillMastery(
+const skillMastery1 = utils.createSkillMastery(
   'Skill Mastery 1',
   skill1,
   mastery3
 );
-const skillMaster2 = utils.createSkillMastery(
+const skillMastery2 = utils.createSkillMastery(
   'Skill Mastery 2',
   skill2,
   mastery2
 );
-const skillMaster3 = utils.createSkillMastery(
+const skillMastery3 = utils.createSkillMastery(
   'Skill Mastery 3',
   skill3,
   mastery3
 );
-const skillMaster4 = utils.createSkillMastery(
+const skillMastery4 = utils.createSkillMastery(
   'Skill Mastery 4',
   skill3,
   mastery3
@@ -96,8 +96,10 @@ const candidate = utils.createCandidate('John Doe', [
   utils.createAssessment(
     'JS',
     [grade1, grade2, grade3],
+    [weight1, weight2, weight3, weight4],
+    [mastery0, mastery1, mastery2, mastery3],
     [skillConfig1, skillConfig2, skillConfig3, skillConfig4],
-    [skillMaster1, skillMaster2, skillMaster3, skillMaster4]
+    [skillMastery1, skillMastery2, skillMastery3, skillMastery4]
   ),
 ]);
 
